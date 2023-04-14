@@ -5,14 +5,13 @@ import { fetchCountriesByName } from './fetchCountries';
 
 const DEBOUNCE_DELAY = 300;
 
-refs = {
-    inputEl: document.querySelector('input'),
-    countryList: document.querySelector('.country-list'),
-    countryInfo: document.querySelector('.country-info')
-}
 
-refs.inputEl.addEventListener('input', debounce(() => {
-    const countryName = refs.inputEl.value
+const inputEl = document.querySelector('input');
+const countryList = document.querySelector('.country-list');
+const countryInfo = document.querySelector('.country-info');
+
+inputEl.addEventListener('input', debounce(() => {
+    const countryName = inputEl.value
 
     if (countryName === "") {
         return resetMarkup();
@@ -55,8 +54,8 @@ function onFetcherror(error) {
 
 //Reset markup Function
 function resetMarkup() {
-  refs.countryList.innerHTML = '';
-  refs.countryInfo.innerHTML = '';
+  countryList.innerHTML = '';
+  countryInfo.innerHTML = '';
 }
 
 //Render markup for one card
@@ -78,7 +77,7 @@ function renderCardMarkup(countries) {
             </div>
             `
             });
-        return refs.countryInfo.innerHTML = countryCard;
+        return countryInfo.innerHTML = countryCard;
 };
 
 //Render list of countries
@@ -94,7 +93,7 @@ function renderCountryListMarkup(countries) {
     `
     }).join("");
     
-    refs.countryList.innerHTML = countryMarkupList;
+    countryList.innerHTML = countryMarkupList;
 }
 
 // TooMuchCountries notify Render
