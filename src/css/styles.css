@@ -16,5 +16,70 @@ body {
   font: inherit;
   padding: 8px;
   max-width: 320px;
+  margin-top: 16px;
   margin-bottom: 16px;
+  margin-left: 80px;
+  border-radius: 19px;
+  box-shadow: -1px 15px 30px -12px black;
+}
+.country-list-item {
+  display: flex;
+  gap: 15;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+
+  background: #ffecec;
+
+  width: 300px;
+
+  margin: left;
+  border-radius: 19px;
+  position: relative;
+
+  box-shadow: -1px 15px 30px -12px black;
+}
+
+.country-list-item:not(:last-child) {
+  margin-bottom: 15px;
+}
+
+.country-list-item-flag {
+  width: 50px;
+  height: 50px;
+}
+
+.list-item-text {
+  font-size: 20px;
+}
+
+.country-card {
+  background: #ffecec;
+  width: 300px;
+  display: inline-block;
+  margin: auto;
+  margin-left: 60px;
+  border-radius: 19px;
+  position: relative;
+  text-align: center;
+  box-shadow: -1px 15px 30px -12px black;
+}
+
+.heading-block {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10;
+
+  padding-left: 25px;
+}
+
+.country-card-flag {
+  width: 60px;
+  height: 60px;
+}
+
+.country-card-heading {
+  font-weight: 700;
+  font-size: 28;
 }
