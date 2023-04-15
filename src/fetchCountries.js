@@ -5,7 +5,8 @@ function fetchCountriesByName(name){
                 throw new Error('Data fail!');
             }
             return response.json();
-        })     
+        })
+        .catch(error => console.log(error));;
 }
 
 export { fetchCountriesByName };

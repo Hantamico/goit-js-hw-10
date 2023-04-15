@@ -7,7 +7,7 @@ const DEBOUNCE_DELAY = 300;
 
 
 const inputEl = document.querySelector('input');
-const countryList = document.querySelector('.country-list');
+    const countryList =document.querySelector('.country-list');
 const countryInfo = document.querySelector('.country-info');
 
 inputEl.addEventListener('input', debounce(() => {
@@ -19,7 +19,7 @@ inputEl.addEventListener('input', debounce(() => {
 
     fetchCountriesByName(countryName)
         .then(renderCountries)
-        .catch(onFetcherror);
+        .catch((onFetcherror));
     
 },DEBOUNCE_DELAY));
 
@@ -46,10 +46,11 @@ function renderCountries(countries) {
  };
 
 // Error notice
-function onFetcherror(error) {
+function onFetcherror() {
+    resetMarkup
     Notiflix.Notify.failure("Oops, there is no country with that name");
-    console.error(error);
-    return;
+    console.log('Error. check the entered country name!');
+    
 }
 
 //Reset markup Function
